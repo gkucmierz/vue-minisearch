@@ -1,0 +1,17 @@
+name: vue-minisearch
+
+services:
+  vue-minisearch:
+    container_name: vue-minisearch
+    build:
+      context: ..
+      dockerfile: demo/Dockerfile
+    expose:
+      - "80"
+    restart: unless-stopped
+    networks:
+      - npm_public
+
+networks:
+  npm_public:
+    external: true

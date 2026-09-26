@@ -1,4 +1,4 @@
-name: Build & Publish Package
+name: Build, Publish & Deploy
 
 on:
   push:
@@ -42,3 +42,16 @@ jobs:
         run: npm publish || echo "Version already published to Gitea, skipping."
         env:
           NODE_AUTH_TOKEN: ${{ secrets.LOCAL_PACKAGE_REGISTRY }}
+
+  deploy-demo:
+    name: Deploy Demo Showcase (PL Server)
+    runs-on: self-hosted-pl
+    needs: publish
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Zero-Downtime Docker Build & Deployment
+        run: |
+          docker compose -f demo/docker-compose.yml build
+          docker compose -f demo/docker-compose.yml up -d --remove-orphans
