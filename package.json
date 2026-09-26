@@ -29,6 +29,11 @@
   ],
   "author": "Grzegorz Kućmierz",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitea.7u.pl/gkucmierz/vue-minisearch.git"
+  },
+  "homepage": "https://gitea.7u.pl/gkucmierz/vue-minisearch",
   "peerDependencies": {
     "minisearch": "^7.1.0",
     "vue": "^3.3.0"
