@@ -1,0 +1,8 @@
+node_modules/
+dist/
+code-recipes/
+.DS_Store
+*.log
+
+# Misc
+code-recipes

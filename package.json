@@ -1,0 +1,40 @@
+{
+  "name": "vue-minisearch",
+  "version": "1.0.0",
+  "description": "Vue 3 Composition API integration for MiniSearch with 1:1 react-minisearch parity",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test:unit": "node --loader ./tests/resolve-hook.mjs --test tests/unit/**/*.test.ts",
+    "test:integration": "node --loader ./tests/resolve-hook.mjs --test tests/integration/**/*.test.ts",
+    "test": "node --loader ./tests/resolve-hook.mjs --test tests/unit/**/*.test.ts tests/integration/**/*.test.ts"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "composition-api",
+    "minisearch",
+    "search",
+    "fulltext-search"
+  ],
+  "author": "Grzegorz Kućmierz",
+  "license": "MIT",
+  "peerDependencies": {
+    "minisearch": "^7.1.0",
+    "vue": "^3.3.0"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ]
+}
