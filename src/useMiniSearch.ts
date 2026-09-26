@@ -1,4 +1,4 @@
-import { ref, shallowRef, watch, toValue, isRef } from 'vue'
+import { ref, shallowRef, watch, toValue, isRef, type Ref } from 'vue'
 import MiniSearch, { type Query, type SearchOptions } from 'minisearch'
 import type { UseMiniSearch, UseMiniSearchOptions, DocumentSource } from './types.js'
 
@@ -13,12 +13,11 @@ export function useMiniSearch<T = any>(
   documents: DocumentSource<T>,
   options: UseMiniSearchOptions<T>
 ): UseMiniSearch<T> {
-  const idField = (options.idField || 'id') as keyof T
   const miniSearch = shallowRef<MiniSearch<T>>(new MiniSearch<T>(options))
   const documentById = new Map<any, T>()
 
   const rawResults = ref<any[] | null>(null)
-  const searchResults = ref<T[] | null>(null)
+  const searchResults: Ref<T[] | null> = shallowRef<T[] | null>(null)
   const suggestions = ref<any[] | null>(null)
   const isIndexing = ref<boolean>(false)
 
