@@ -1,0 +1,16 @@
+{
+  "name": "vue-minisearch-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Interactive showcase and playground for vue-minisearch",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --outDir ../dist-demo --base ./"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.2.0",
+    "vue": "^3.5.13"
+  }
+}

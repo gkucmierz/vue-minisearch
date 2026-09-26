@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-demo/
 code-recipes/
 .DS_Store
 *.log

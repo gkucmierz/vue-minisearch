@@ -17,7 +17,9 @@
     "build": "tsc",
     "test:unit": "node --loader ./tests/resolve-hook.mjs --test tests/unit/**/*.test.ts",
     "test:integration": "node --loader ./tests/resolve-hook.mjs --test tests/integration/**/*.test.ts",
-    "test": "node --loader ./tests/resolve-hook.mjs --test tests/unit/**/*.test.ts tests/integration/**/*.test.ts"
+    "test": "node --loader ./tests/resolve-hook.mjs --test tests/unit/**/*.test.ts tests/integration/**/*.test.ts",
+    "demo:dev": "npm --prefix demo run dev",
+    "demo:build": "npm --prefix demo run build"
   },
   "keywords": [
     "vue",
